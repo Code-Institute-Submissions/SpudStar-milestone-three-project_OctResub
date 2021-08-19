@@ -4,7 +4,9 @@
     <div class = "card_container">
         <h2>{{trump_card.card_name}}</h2>
         {{trump_card.stat_total}} <br>
-        <img class = "card_image" src= {{trump_card.image_url}} alt = "An image of {{trump_card.card_name}}"> <br>
+        <div class="card_image_container">
+            <img class = "card_image" src= {{trump_card.image_url}} alt = "An image of {{trump_card.card_name}}">
+        </div> <br>
         {{trump_card.attack_stat}} <br>
         {{trump_card.defence_stat}} <br>
         {{trump_card.speed_stat}} <br>
