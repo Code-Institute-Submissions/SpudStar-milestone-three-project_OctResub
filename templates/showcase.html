@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <!-- Code to test database links -->
+{% extends "base.html" %}
+{% block cards %}
     {% for trump_card in cards %}
     <div class = "card_container">
         <h2>{{trump_card.card_name}}</h2>
@@ -20,5 +12,4 @@
         {{trump_card.luck_stat}} <br>
     </div>
     {% endfor %}
-</body>
-</html>
+{% endblock %}
