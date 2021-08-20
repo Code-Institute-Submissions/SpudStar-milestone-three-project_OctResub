@@ -23,8 +23,24 @@ def all_trumps_showcase():
     cards = mongo.db.trump_card_stats.find()
     return render_template("showcase.html", cards = cards)
 
-@app.route("/register", methods=["GET","POST"])
+@app.route("/register", methods=["GET", "POST"])
 def register():
+    if request.method == "POST":
+        existing_user = mongo.db.user_info.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            flash("This username is already taken.")
+            return redirect(url_for("register"))
+
+        register = {
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(request.form.get("password"))
+        }
+
+        mongo.db.user_info.insert_one(register)
+
+        session["user"] = request.form.get("username").lower()
     return render_template("register.html")
 
 
