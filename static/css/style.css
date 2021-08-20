@@ -73,3 +73,20 @@ ul.dropdown-content li a {
     font-weight:200px ;
     color: white;
 }
+
+label{
+    font-size:20px !important;
+}
+
+.range-field{
+    background-color:rgb(65, 39, 18);
+    padding:10px;
+    border-radius:10px;
+    margin:0;
+}
+
+.content-holder{
+    background-color:rgb(236, 229, 158);
+    padding:10px 30px 50px !important;
+    border-radius: 0 0 20px 20px;
+}

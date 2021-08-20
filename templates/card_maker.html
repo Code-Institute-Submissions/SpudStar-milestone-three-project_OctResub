@@ -1,8 +1,59 @@
 {% extends "base.html" %}
 {% block content %}
     <div class="row">
-        <div class="title_holder col m6 offset-m3">
-            <h4>Card Maker</h4>
+        <div class="col m6 offset-m3 content-holder">
+            <div class="title-holder">
+                <h4>Card Maker</h4>
+            </div>
+            <form>
+                <div class="row">
+                    <div class="input-field col l6 s12">
+                        <i class="material-icons prefix">face</i>
+                        <input id="card_name" name="card_name" type="text" class="validate" minlength="3" maxlength="10" required>
+                        <label for="card_name">Card Name</label>
+                    </div>
+                    <div class="input-field col l6 s12">
+                        <i class="material-icons prefix">add_a_photo</i>
+                        <input id="image_url" name="image_url" type="url" class="validate" required>
+                        <label for="image_url">Image URL</label>
+                    </div>
+                </div>
+    
+                <div class="row center-align">
+                    <div class="input-field col m4 s12">
+                        <p class="range-field">
+                            <label for="attack_stat">Attack: </label>
+                            <input type="range" id="attack_stat" name="attack_stat" min="0" max="100" />
+                        </p>
+                    </div>
+                    <div class="input-field col m4 s12">
+                        <p class="range-field">
+                            <label for="defence_stat">Defence: </label>
+                            <input type="range" id="defence_stat" name="defence_stat" min="0" max="100" />
+                        </p>
+                    </div>
+                    <div class="input-field col m4 s12">
+                        <p class="range-field">
+                            <label for="speed_stat">Speed: </label>
+                            <input type="range" id="speed_stat" name="speed_stat" min="0" max="100" />
+                        </p>
+                    </div>
+                </div>
+                <div class="row center-align">
+                    <div class="input-field col m4 offset-m2 s12">
+                        <p class="range-field">
+                            <label for="charisma_stat">Charisma: </label>
+                            <input type="range" id="charisma_stat" name="charisma_stat" min="0" max="100" />
+                        </p>
+                    </div>
+                    <div class="input-field col m4 s12">
+                        <p class="range-field">
+                            <label for="luck_stat">Luck: </label>
+                            <input type="range" id="luck_stat" name="luck_stat" min="0" max="100" />
+                        </p>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 {% endblock %}
