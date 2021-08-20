@@ -17,14 +17,14 @@
         <li><a href="{{ url_for('logout') }}">Log Out</a></li>
         <li class="divider"></li>
         <li><a href="{{ url_for('profile', username=session['user']) }}">View Profile</a></li>
-        <li><a href="#">Make a Card</a></li>
+        <li><a href="{{ url_for('card_maker') }}">Make a Card</a></li>
     </ul>
     <nav>
         <div class="nav-wrapper brown darken-1">
-        <a href="{{ url_for('all_trumps_showcase') }}" class="brand-logo">Logo</a>
+        <a href="{{ url_for('home') }}" class="brand-logo">Logo</a>
         <ul class="right hide-on-med-and-down">
-            <li><a href="{{ url_for('all_trumps_showcase') }}">Home</a></li>
-            <li><a href="#">Showcase</a></li>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('all_trumps_showcase') }}">Showcase</a></li>
             {% if not session.user %}
             <li><a href="{{ url_for('register') }}">Register</a></li>
             <li><a href="{{ url_for('login') }}">Log In</a></li>

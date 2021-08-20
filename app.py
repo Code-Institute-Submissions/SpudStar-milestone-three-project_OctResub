@@ -18,6 +18,11 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
+@app.route("/home")
+def home():
+    return render_template("index.html")
+
+
 @app.route("/all_trumps_showcase")
 def all_trumps_showcase():
     cards = mongo.db.trump_card_stats.find()
@@ -81,6 +86,11 @@ def profile(username):
 def logout():
     session.pop("user")
     return redirect(url_for("all_trumps_showcase"))
+
+
+@app.route("/card_maker")
+def card_maker():
+    return render_template("card_maker.html")
 
 
 if __name__ == "__main__":
