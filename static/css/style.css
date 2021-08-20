@@ -96,3 +96,8 @@ label{
     border-radius: 10px;
     margin-top: 20px;
 }
+
+.error_message{
+    text-align: center;
+    margin: 20px 0 0 0;
+}

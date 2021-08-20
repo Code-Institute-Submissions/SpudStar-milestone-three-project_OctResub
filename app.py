@@ -78,7 +78,8 @@ def profile(username):
     username = mongo.db.user_info.find_one(
         {"username": session["user"]})["username"]
     if session["user"]:
-        return render_template("profile.html", username=username)
+        cards = mongo.db.trump_card_stats.find()
+        return render_template("profile.html", username=username, cards=cards)
     return redirect(url_for("login"))
 
 
