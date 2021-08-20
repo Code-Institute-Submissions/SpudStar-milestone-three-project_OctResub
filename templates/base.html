@@ -15,9 +15,9 @@
     <!-- Dropdown Structure -->
     <ul id='dropdown' class='dropdown-content'>
         <li><a href="{{ url_for('login') }}">Log In</a></li>
-        <li><a href="#">Log Out</a></li>
+        <li><a href="{{ url_for('logout') }}">Log Out</a></li>
         <li class="divider"></li>
-        <li><a href="#">View Profile</a></li>
+        <li><a href="{{ url_for('profile', username=session['user']) }}">View Profile</a></li>
         <li><a href="#">Make a Card</a></li>
     </ul>
     <nav>
