@@ -1,4 +1,1 @@
-$(document).ready(function(){
-    $('.modal').modal();
-    $('.dropdown-trigger').dropdown();
- });
+$('.dropdown-trigger').dropdown();

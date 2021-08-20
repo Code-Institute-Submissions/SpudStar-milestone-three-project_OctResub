@@ -1,4 +1,4 @@
-.card_container{
+.card-container{
     background-color: rgb(145, 100, 63);
     width: 300px;
     height: 450px;
@@ -8,12 +8,12 @@
     border-style: solid;
 }
 
-.card_image{
+.card-image{
     height:100%;
     overflow: hidden;
 }
 
-.card_image_container{
+.card-image-container{
     width:100%;
     height:40%;
     background-color: rgb(65, 39, 18);
@@ -21,27 +21,27 @@
     justify-content: center;
 }
 
-.card_stats_container{
+.card-stats-container{
     height:20px;
     margin:0;
     margin-bottom:10px;
 }
 
-.card_name_container{
+.card-name-container{
     height:15%;
     width:100%;
     display:flex;
     justify-content: center;
 }
 
-.full_bar{
+.full-bar{
     width:100%;
     height:100%;
     border-radius: 10px;
     background-color:rgb(26, 16, 6);
 }
 
-.value_bar{
+.value-bar{
     height:16px;
     margin-top:2px;
     border-radius: 8px;
@@ -60,4 +60,16 @@
 .stats p{
     font-size: 15px;
     font-weight: 700;
+}
+
+header .dropdown-content{
+    width:300px !important;
+    background-color: rgb(66, 59, 50);
+    top: 100% !important;
+}
+
+ul.dropdown-content li a {
+    background-color: rgb(66, 59, 50);
+    font-weight:200px ;
+    color: white;
 }

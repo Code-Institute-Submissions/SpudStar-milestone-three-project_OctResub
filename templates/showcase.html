@@ -1,51 +1,51 @@
 {% extends "base.html" %}
 {% block content %}
     {% for trump_card in cards %}
-    <div class = "container card_container">
-        <div class="card_name_container valign-wrapper">
+    <div class = "container card-container">
+        <div class="card-name-container valign-wrapper">
             <h3>{{trump_card.card_name}}</h3>
         </div>
-        <div class="card_image_container">
-            <img class = "card_image" src= {{trump_card.image_url}} alt = "An image of {{trump_card.card_name}}">
+        <div class="card-image-container">
+            <img class = "card-image" src= {{trump_card.image_url}} alt = "An image of {{trump_card.card_name}}">
         </div> <br>
-        <div class="card_stats_container row">
+        <div class="card-stats-container row">
             <div class="col s5 stats valign-wrapper">
                 <p>Attack: {{trump_card.attack_stat}}</p> 
             </div>
             <div class="col s7">
-                <div class="full_bar"><div class="value_bar" style="width: {{trump_card.attack_stat}}%"></div></div>
+                <div class="full-bar"><div class="value-bar" style="width: {{trump_card.attack_stat}}%"></div></div>
             </div>
         </div>
-        <div class="card_stats_container row">
+        <div class="card-stats-container row">
             <div class="col s5 stats valign-wrapper">
                 <p>Defence: {{trump_card.defence_stat}}</p> 
             </div>
             <div class="col s7">
-                <div class="full_bar"><div class="value_bar" style="width: {{trump_card.defence_stat}}%"></div></div>
+                <div class="full-bar"><div class="value-bar" style="width: {{trump_card.defence_stat}}%"></div></div>
             </div>
         </div>
-        <div class="card_stats_container row">
+        <div class="card-stats-container row">
             <div class="col s5 stats valign-wrapper">
                 <p>Speed: {{trump_card.speed_stat}}</p> 
             </div>
             <div class="col s7">
-                <div class="full_bar"><div class="value_bar" style="width: {{trump_card.speed_stat}}%"></div></div>
+                <div class="full-bar"><div class="value-bar" style="width: {{trump_card.speed_stat}}%"></div></div>
             </div>
         </div>
-        <div class="card_stats_container row">
+        <div class="card-stats-container row">
             <div class="col s5 stats valign-wrapper">
                 <p>Charisma: {{trump_card.charisma_stat}}</p> 
             </div>
             <div class="col s7">
-                <div class="full_bar"><div class="value_bar" style="width: {{trump_card.charisma_stat}}%"></div></div>
+                <div class="full-bar"><div class="value-bar" style="width: {{trump_card.charisma_stat}}%"></div></div>
             </div>
         </div>
-        <div class="card_stats_container row">
+        <div class="card-stats-container row">
             <div class="col s5 stats valign-wrapper">
                 <p>Luck: {{trump_card.luck_stat}}</p> 
             </div>
             <div class="col s7">
-                <div class="full_bar"><div class="value_bar" style="width: {{trump_card.luck_stat}}%"></div></div>
+                <div class="full-bar"><div class="value-bar" style="width: {{trump_card.luck_stat}}%"></div></div>
             </div>
         </div>
     </div>

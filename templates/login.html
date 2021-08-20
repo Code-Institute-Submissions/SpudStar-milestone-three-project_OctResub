@@ -2,9 +2,9 @@
 {% block content %}
     <div class="row">
         <div class="title_holder col m6 offset-m3">
-            <h3>Register</h3>
+            <h3>Log In</h3>
         </div>
-        <form class="col m6 offset-m3" method="POST" action="{{ url_for('register') }}">
+        <form class="col m6 offset-m3" method="POST" action="{{ url_for('login') }}">
             <div class="row">
                 <div class="input-field col s12">
                     <i class="material-icons prefix">account_box</i>
@@ -16,7 +16,7 @@
                     <input id="icon_telephone" name="password" type="password" class="validate" minlength="8" maxlength="20">
                     <label for="icon_telephone">Password:</label>
                 </div>
-                <button class="btn waves-effect waves-light col s4 offset-s4 submit_button brown darken-1" type="submit" name="action">Register
+                <button class="btn waves-effect waves-light col s4 offset-s4 submit_button brown darken-1" type="submit" name="action">Log In
                     <i class="material-icons right">send</i>
                   </button>
             </div>
