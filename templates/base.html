@@ -14,7 +14,6 @@
         
     <!-- Dropdown Structure -->
     <ul id='dropdown' class='dropdown-content'>
-        <li><a href="{{ url_for('login') }}">Log In</a></li>
         <li><a href="{{ url_for('logout') }}">Log Out</a></li>
         <li class="divider"></li>
         <li><a href="{{ url_for('profile', username=session['user']) }}">View Profile</a></li>
@@ -26,9 +25,13 @@
         <ul class="right hide-on-med-and-down">
             <li><a href="{{ url_for('all_trumps_showcase') }}">Home</a></li>
             <li><a href="#">Showcase</a></li>
+            {% if not session.user %}
             <li><a href="{{ url_for('register') }}">Register</a></li>
+            <li><a href="{{ url_for('login') }}">Log In</a></li>
             <!-- Dropdown Trigger -->
-            <li><a class="dropdown-button" href="#" data-activates="dropdown">Profile<i class="material-icons right">account_box</i></a></li>
+            {% else %}
+            <li><a class="dropdown-button" href="#" data-activates="dropdown">{{ session["user"].capitalize() }}'s Profile<i class="material-icons right">account_box</i></a></li>
+            {% endif %}
         </ul>
         </div>
     </nav>
