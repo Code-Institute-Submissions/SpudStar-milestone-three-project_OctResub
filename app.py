@@ -26,7 +26,7 @@ def home():
 @app.route("/all_trumps_showcase")
 def all_trumps_showcase():
     cards = mongo.db.trump_card_stats.find()
-    return render_template("showcase.html", cards = cards)
+    return render_template("showcase.html", cards=cards)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -88,8 +88,20 @@ def logout():
     return redirect(url_for("all_trumps_showcase"))
 
 
-@app.route("/card_maker")
+@app.route("/card_maker", methods=["GET", "POST"])
 def card_maker():
+    if request.method == "POST":
+        data = {
+            "card_name": request.form.get("card_name"),
+            "image_url": request.form.get("image_url"),
+            "attack_stat": request.form.get("attack_stat"),
+            "defence_stat": request.form.get("defence_stat"),
+            "speed_stat": request.form.get("speed_stat"),
+            "charisma_stat": request.form.get("charisma_stat"),
+            "luck_stat": request.form.get("luck_stat"),
+            "card_maker": session["user"]
+        }
+        mongo.db.trump_card_stats.insert_one(data)
     return render_template("card_maker.html")
 
 

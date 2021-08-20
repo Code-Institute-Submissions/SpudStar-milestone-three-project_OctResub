@@ -5,7 +5,7 @@
             <div class="title-holder">
                 <h4>Card Maker</h4>
             </div>
-            <form>
+            <form method="POST" action="{{ url_for('card_maker') }}">
                 <div class="row">
                     <div class="input-field col l6 s12">
                         <i class="material-icons prefix">face</i>
@@ -20,19 +20,19 @@
                 </div>
     
                 <div class="row center-align">
-                    <div class="input-field col m4 s12">
+                    <div class="input-field col l4 s12">
                         <p class="range-field">
                             <label for="attack_stat">Attack: </label>
                             <input type="range" id="attack_stat" name="attack_stat" min="0" max="100" />
                         </p>
                     </div>
-                    <div class="input-field col m4 s12">
+                    <div class="input-field col l4 s12">
                         <p class="range-field">
                             <label for="defence_stat">Defence: </label>
                             <input type="range" id="defence_stat" name="defence_stat" min="0" max="100" />
                         </p>
                     </div>
-                    <div class="input-field col m4 s12">
+                    <div class="input-field col l4 s12">
                         <p class="range-field">
                             <label for="speed_stat">Speed: </label>
                             <input type="range" id="speed_stat" name="speed_stat" min="0" max="100" />
@@ -40,18 +40,23 @@
                     </div>
                 </div>
                 <div class="row center-align">
-                    <div class="input-field col m4 offset-m2 s12">
+                    <div class="input-field col l4 offset-l2 s12">
                         <p class="range-field">
                             <label for="charisma_stat">Charisma: </label>
                             <input type="range" id="charisma_stat" name="charisma_stat" min="0" max="100" />
                         </p>
                     </div>
-                    <div class="input-field col m4 s12">
+                    <div class="input-field col l4 s12">
                         <p class="range-field">
                             <label for="luck_stat">Luck: </label>
                             <input type="range" id="luck_stat" name="luck_stat" min="0" max="100" />
                         </p>
                     </div>
+                </div>
+                <div class="row">
+                    <button class="btn waves-effect waves-light col l4 offset-l4 s8 offset-s2 submit_button brown darken-1 card_button" type="submit">Make a card!
+                        <i class="material-icons right">send</i>
+                    </button>
                 </div>
             </form>
         </div>

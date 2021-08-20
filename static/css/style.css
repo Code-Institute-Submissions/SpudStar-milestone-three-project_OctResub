@@ -90,3 +90,9 @@ label{
     padding:10px 30px 50px !important;
     border-radius: 0 0 20px 20px;
 }
+
+.card_button{
+    height:60px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
