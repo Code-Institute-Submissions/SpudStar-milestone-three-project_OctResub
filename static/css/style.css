@@ -91,13 +91,17 @@ label{
     border-radius: 0 0 20px 20px;
 }
 
-.card_button{
+.card-button{
     height:60px;
     border-radius: 10px;
     margin-top: 20px;
 }
 
-.error_message{
+.error-message{
     text-align: center;
     margin: 20px 0 0 0;
+}
+
+.delete-button{
+    left:7px;
 }
