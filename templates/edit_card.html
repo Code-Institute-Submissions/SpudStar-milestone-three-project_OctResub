@@ -5,16 +5,16 @@
             <div class="title-holder">
                 <h4>Edit a Card</h4>
             </div>
-            <form method="POST" action="{{ url_for('edit_card', card_id=card._id) }}">
+            <form method="POST" action="{{ url_for('edit_card', card_id=card._id) }}"> <!-- Allows the form to change values in the database by calling the edit_card fuction using the cards unique ID -->
                 <div class="row">
                     <div class="input-field col l6 s12">
                         <i class="material-icons prefix">face</i>
-                        <input id="card_name" name="card_name" type="text" class="validate" minlength="3" maxlength="10" required value="{{ card.card_name }}">
+                        <input id="card_name" name="card_name" type="text" class="validate" minlength="3" maxlength="10" required value="{{ card.card_name }}"> <!-- Value sets the name of the card before editing -->
                         <label for="card_name">Card Name</label>
                     </div>
                     <div class="input-field col l6 s12">
                         <i class="material-icons prefix">add_a_photo</i>
-                        <input id="image_url" name="image_url" type="url" class="validate" required value="{{ card.image_url }}">
+                        <input id="image_url" name="image_url" type="url" class="validate" required value="{{ card.image_url }}"> <!-- Value sets the image of the card before editing -->
                         <label for="image_url">Image URL</label>
                     </div>
                 </div>
@@ -23,19 +23,19 @@
                     <div class="input-field col l4 s12">
                         <p class="range-field">
                             <label for="attack_stat">Attack: </label>
-                            <input type="range" id="attack_stat" name="attack_stat" min="0" max="100" value="{{ card.attack_stat }}"/>
+                            <input type="range" id="attack_stat" name="attack_stat" min="0" max="100" value="{{ card.attack_stat }}"/> <!-- Value sets the stats of the card before editing -->
                         </p>
                     </div>
                     <div class="input-field col l4 s12">
                         <p class="range-field">
                             <label for="defence_stat">Defence: </label>
-                            <input type="range" id="defence_stat" name="defence_stat" min="0" max="100" value="{{ card.defence_stat }}" />
+                            <input type="range" id="defence_stat" name="defence_stat" min="0" max="100" value="{{ card.defence_stat }}" /> <!-- Value sets the stats of the card before editing -->
                         </p>
                     </div>
                     <div class="input-field col l4 s12">
                         <p class="range-field">
                             <label for="speed_stat">Speed: </label>
-                            <input type="range" id="speed_stat" name="speed_stat" min="0" max="100" value="{{ card.speed_stat }}"/>
+                            <input type="range" id="speed_stat" name="speed_stat" min="0" max="100" value="{{ card.speed_stat }}"/> <!-- Value sets the stats of the card before editing -->
                         </p>
                     </div>
                 </div>
@@ -43,18 +43,20 @@
                     <div class="input-field col l4 offset-l2 s12">
                         <p class="range-field">
                             <label for="charisma_stat">Charisma: </label>
-                            <input type="range" id="charisma_stat" name="charisma_stat" min="0" max="100" value="{{ card.charisma_stat }}"/>
+                            <input type="range" id="charisma_stat" name="charisma_stat" min="0" max="100" value="{{ card.charisma_stat }}"/> <!-- Value sets the stats of the card before editing -->
                         </p>
                     </div>
                     <div class="input-field col l4 s12">
                         <p class="range-field">
                             <label for="luck_stat">Luck: </label>
-                            <input type="range" id="luck_stat" name="luck_stat" min="0" max="100" value="{{ card.luck_stat }}"/>
+                            <input type="range" id="luck_stat" name="luck_stat" min="0" max="100" value="{{ card.luck_stat }}"/> <!-- Value sets the stats of the card before editing -->
                         </p>
                     </div>
                 </div>
                 <div class="row">
+                    <!-- Styled button which allows the user to stop editing -->
                     <a href="{{ url_for('home') }}" class="btn waves-effect waves-light red darken-1 card-button col l4 offset-l2 s8 offset-s2"><span class="cancel">Cancel</span></a>
+                    <!-- Styled button which submits the form and edits a card -->
                     <button class="btn waves-effect waves-light col l4 s8 offset-s2 submit_button brown darken-1 card-button" type="submit">Finish Edit</button>
                 </div>
             </form>

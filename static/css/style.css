@@ -1,3 +1,4 @@
+/* Classes used in card creation */
 .card-container{
     background-color: rgb(145, 100, 63);
     width: 300px !important;
@@ -49,10 +50,6 @@
     background-color:rgb(219, 153, 86);
 }
 
-.test{
-    background-color:rgb(122, 115, 107)
-}
-
 .stats{
     height:100%;
     margin:0;
@@ -62,6 +59,7 @@
     font-size: 15px;
     font-weight: 700;
 }
+/* Classes used in nav styling */
 
 header .dropdown-content{
     width:300px !important;
@@ -75,6 +73,8 @@ ul.dropdown-content li a {
     color: white;
 }
 
+/* Classes used in form input styling */
+
 label{
     font-size:20px !important;
 }
@@ -84,14 +84,6 @@ label{
     padding:10px;
     border-radius:10px;
     margin:0;
-}
-
-.content-holder{
-    background-color:rgb(236, 229, 158);
-    padding-top:10px !important;
-    padding-bottom:10px !important;
-    border-radius: 0 0 20px 20px;
-    text-align: center;
 }
 
 .card-button{
@@ -105,10 +97,6 @@ label{
     margin: 20px 0 0 0;
 }
 
-.delete-button{
-    left:7px;
-}
-
 .cards-maker{
     position: relative;
     top:-20px;
@@ -116,6 +104,22 @@ label{
     text-align: center;
 }
 
+/* Main decorative containers  */
+
+.content-holder{
+    background-color:rgb(236, 229, 158);
+    padding-top:10px !important;
+    padding-bottom:10px !important;
+    border-radius: 0 0 20px 20px;
+    text-align: center;
+}
+
+body {
+    background-image: url("../resources/background.png");
+    background-repeat: repeat;
+  }
+
+/* classes used to slightly position elements */
 .sub-header{
     position: relative;
     top:3px;
@@ -126,11 +130,10 @@ label{
     top:12px;
 }
 
-body {
-    background-image: url("../resources/background.png");
-    background-repeat: repeat;
-  }
-
 .brand-logo{
     top:7px;
+}
+
+.delete-button{
+    left:7px;
 }

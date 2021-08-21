@@ -1,1 +1,1 @@
-$('.dropdown-trigger').dropdown();
+$('.dropdown-trigger').dropdown(); //Code to initialize navbar dropdown (From Materialize)

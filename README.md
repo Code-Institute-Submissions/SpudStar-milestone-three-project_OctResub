@@ -1,104 +1,160 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+![webiste](readmeassets/amResponsiveMinefield.png)
+# Top of the Trumps
+## An Backend Development Project by Edward Stanley
+'Top of the Trumps' is a database driven project using MongoDB for data storage and retrieval as well as Materialize for the styling and form elements. The website allows users to create their own cards based on the popular card game Top Trumps, the goal being the crossover of multiple characters and fandoms to create one large Top Trumps card depository.
+Users have the ability to create their own private accounts in which they can create, edit and delete their creations whilst leaving the work of others untouched. 
+#
 
-Welcome SpudStar,
+## UX
+## Different User objectives
+### Site Owner's objectives
+* The owner wants to create a community for creating Top Trumps cards
+* The owner wants to create a pleasant website experience for the user
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. The last update to this file was: **July 2, 2021**
+### Registered User objectives
+* The user wants to be able to create a card modelled after the game 'Top Trumps'
+* The user wants to be able to make changes to a card if necessary
+* The user wants to be able to delete a card if necessary
+* The user wants their creations to be safe from other people editing/deleting them
+* The user wants to be able to see other creations in the community
+* The user wants to be able to log in and out securely
+* The user wants any data relating to IP ect to be kept private
+* The user wants visual aids for the card statistics
 
-## Gitpod Reminders
+### Unregistered User objectives
+* The user wants to be able to create an account with a secure username/password
+* The user might want to see community creations before registering
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## User Stories
+### As an owner:
+* I want the site to have navigation controls for multiple devices
+* I want the user to have as much control over their account as possible
+* I want to create a site which credits community members who make content for it
 
-`python3 -m http.server`
+### As a user:
+* I want to be able to create my own cards including stats, graphics, and names
+* I want to be able to create a unique account, and have full control over what content is in there
+* I want to see what cards the community has created, and who created them
+* I want a secure registration, log in, log out process using password encryption
 
-A blue button should appear to click: _Make Public_,
+#
+## Wireframes
+The following wirefrane was made in Balsamiq  
+[Please Click Here.](readmeassets/milestonetwowireframe.pdf)
 
-Another blue button should appear to click: _Open Browser_.
+The wireframe can also be found in the readmeassets folder included in this project
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+#
+## Features
+### Existing Features
+For the features I will go on a page to page basis.
 
-A blue button should appear to click: _Make Public_,
+### The Landing Page (index.html)
+1) Has informative text letting the user know what the website is about
+2) Has working buttons for registering and loging in, depending on the user's needs
 
-Another blue button should appear to click: _Open Browser_.
+### The Showcase Page (showcase.html)
+1) Displays all the cards created by the community, each card displays the name of the card, the associated image, the statistics of the card based on 5 key values with accompanying bars for visual aid, and the username of the maker of the card
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+### The Login/Register Page (login.html/register.html)
+1) Contains text fields for the user to input a username and password
+2) If an error occurs such as a repeated username or wrong password a flash message is displayed notifying the user
+3) A button which sends data to the database once conditions are fufilled which can write a new entry to the database, or check if the user's credentials are correct
 
-To log into the Heroku toolbelt CLI:
+### The Card Creation/Editing Page (card_maker.html/edit_card.html)
+1) Contains multiple form inputs for the values of a card. The details are a text input for the name, a url input for the picture, sliders to adjust the stat values, and a button to write to the database or submit changes.
+2) If editing, the current values of the card are automatically updated into the form.
+3) Form validation notifies the user if something is wrong
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+### The Profile Page (profile.html)
+1) Only displays the cards the user themselves have made
+2) Adds buttons to the cards allowing for editing and deletion
+3) Uses cookies to recognise which user is using the website and fetches their data accordingly
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+### The Base Page (base.html)
+1) The template page which loads content from other pages into itself to display
+2) A dropdown navbar full of links for accessing the website which updates its displayed values based on whether the user is logged in or not
+3) A secondary navbar for smaller screens holding all the links allowing for small screen navigation
+4) Contains the logo and main background for all pages
 
-------
+### Features Left to Implement
+1) A way for the user to export their completed card as a png file
+2) A way for users to 'subscribe' to other user's cards allowing them to add them into a custom deck in their profile
+3) A game using those custom decks allowing users to play top trumps in browser
 
-## Release History
+#
+## Technologies Used
+- HTML5 - Allows the website to be structured
+- CSS - Allows styalising of elements to provide visual effect
+- JQuery - Initialized the dropdown menu
+- Python - Allowed database retrieveal, writing to, and editing. Also allowed for user accounts.
+- Flask - An import that allowed better communication between Python and HTML
+- [MaterializeCSS](https://materializecss.com/) - Allowed for implementation of form elements and CSS, as well as icons for visual effect
+- [Gitpod](https://www.gitpod.io/) - The main coding platform used to create the project
+- [Github](https://github.com/) - Allowed for the website to be deployed and version control
+- [Gimp Studio](https://www.gimp.org/) - Allowed the editing of the background image for the website
+#
+## Testing
+### HTML W3 Validator
+ ![webiste](readmeassets/htmlvalidatorone.png)
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+ In order to check my HTML I put my website's URL into the validator. Whilst the majority was just issues with commenting which didn't affect the code, there was an odd interaction popping up between my last div in my footer. Upon further inspection I simply added a " in my div tags by mistake. Deleting it solved those errors.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+ ![webiste](readmeassets/htmlvalidatortwo.png)
+ ### CSS W3 Validator
+ ![webiste](readmeassets/cssvalidatorresult.png)
+ There was no problems with my CSS code, the validator passed it first time.
+ ### JSHint Validator
+ After putting the code through the validator there were multiple complaints about the 'let' initialiser however on closer inspection it was fine. The most that was wrong with the code was the occasional missing semi-colon which I fixed.
+### Lighthouse Testing
+![webiste](readmeassets/lighthousevalidator.png)
+After running it through Google Chrome's lighthouse tool I had an overall result of 89 which was quite ideal. The page was able to load efficiently and effectively. 
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+### Larger issues through Testing
+There were a couple of parts of the code which frustrated me for a while before finally working through to a solution:
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+### User Story Testing
+##### *" Owner - I want the site to have controls for multiple devices (mouse and touchscreen controls). -"*
+- There are optional buttons for mobile users allowing them to reveal/flag tiles as necessary. There are also alternate controls for mouse users in the form of right and left click readers to add ease of access.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+##### *" User- I want to be able to play the game on any device"*
+- The tiles are able to dynamically grow/shrink to fit any screen size allowing for a wide range of screen sizes to be used.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+##### *" Owner - * I want the user to have as much control over their experience as possible"*
+##### *" User- I want to be able to control as much of the games setup as possible"*
+- The user is able to control their own diffculty through the Status Area dimension and bomb values. Their diffculty setting is essentially custom. The added functionality of the flagging also gives the user more control over the game.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+##### *" User- I want the game to have quality of life features that handle any unecessary actions"*
+- The game has a number of these in place. For example the auto reveal of tiles adjacent to a tile with no bombs near it speeds up the process for the user significantly especially with larger board sizes. The game also keeps track of key statistics for the user such as how many spaces they've flagged and how many tiles are left so the user doesn't have to calculate manually.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+##### *" User - I want to have access to instructions on how to play"*
+- The header features an external link to a page with instructions on how Minesweeper plays out.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+##### *" User- I want to have graphics relevant to the game that clearly convey what is happening"*
+- The use of coloured tiles in addition to the numbers on each tile creates an easier visual distinction for the user when playing the game. All colours are very different from eachother so confusion is minimum. The background graphic also doesn't distract from the game itself and the translucent overlay for containers makes text easier to read.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+##### *" Owner - I want to create a game that visitors can enjoy used"*
+- I myself very much enjoyed making and playing this game in browser
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+#
+## Deployment
+Before attempting to download this project for your own I highly recommend installing Python3, pip3 (which can be used to import other parts like flask), and setting up accounts on Heroku and MongoDB.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+To deploy the website I used the following steps:
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
 
-------
+### How to run the project locally
 
-## FAQ about the uptime script
+#
+## Credits
+### External Code
+Any external code used was from MaterializeCSS in order to structure the dropdown menu, forms, and general CSS styling. Everything python-side was what I had learnt from lessons/ my own logic.
 
-**Why have you added this script?**
+### Media - photos
+One photo was used for this project, and it was edited into the custom background by myself. The origional can be found[here.](https://imgbin.com/png/Gzs6cgcm/top-trumps-logo-winning-moves-png) 
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+## Acknowledgement
+Thanks you for looking over this project, I hope you had a go at creating some cards of your own!
+Thank you for your time.
+#

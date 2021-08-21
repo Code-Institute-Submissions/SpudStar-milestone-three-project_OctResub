@@ -1,20 +1,21 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "base.html" %} <!-- Allows for Navbar -->
+{% block content %} <!-- Start of Content of Page -->
     <div class="row">
-        <div class="col m6 offset-m3 content-holder">
-            <div class="title-holder">
+        <div class="col m6 offset-m3 content-holder"> <!-- Initial holder for styling -->
+            <div class="title-holder"> <!-- Holds the title of the page -->
                 <h4>Card Maker</h4>
             </div>
-            <form method="POST" action="{{ url_for('card_maker') }}">
+            <form method="POST" action="{{ url_for('card_maker') }}"> <!-- Allows the form to submit, calls the card_maker function in python -->
+                <!-- Form basis from materialize, customized for own use -->
                 <div class="row">
                     <div class="input-field col l6 s12">
                         <i class="material-icons prefix">face</i>
-                        <input id="card_name" name="card_name" type="text" class="validate" minlength="3" maxlength="10" required>
-                        <label for="card_name">Card Name</label>
+                        <input id="card_name" name="card_name" type="text" class="validate" minlength="3" maxlength="10" required> <!-- Takes the input for the cards name -->
+                        <label for="card_name">Card Name</label> 
                     </div>
                     <div class="input-field col l6 s12">
                         <i class="material-icons prefix">add_a_photo</i>
-                        <input id="image_url" name="image_url" type="url" class="validate" required>
+                        <input id="image_url" name="image_url" type="url" class="validate" required> <!-- Takes the input for the cards image url -->
                         <label for="image_url">Image URL</label>
                     </div>
                 </div>
@@ -23,37 +24,38 @@
                     <div class="input-field col l4 s12">
                         <p class="range-field">
                             <label for="attack_stat">Attack: </label>
-                            <input type="range" id="attack_stat" name="attack_stat" min="0" max="100" />
+                            <input type="range" id="attack_stat" name="attack_stat" min="0" max="100" /> <!-- Takes the input for the attack stat -->
                         </p>
                     </div>
                     <div class="input-field col l4 s12">
                         <p class="range-field">
                             <label for="defence_stat">Defence: </label>
-                            <input type="range" id="defence_stat" name="defence_stat" min="0" max="100" />
+                            <input type="range" id="defence_stat" name="defence_stat" min="0" max="100" /> <!-- Takes the input for the defence stat -->
                         </p>
                     </div>
                     <div class="input-field col l4 s12">
                         <p class="range-field">
                             <label for="speed_stat">Speed: </label>
-                            <input type="range" id="speed_stat" name="speed_stat" min="0" max="100" />
+                            <input type="range" id="speed_stat" name="speed_stat" min="0" max="100" /> <!-- Takes the input for the speed stat -->
                         </p>
                     </div>
                 </div>
                 <div class="row center-align">
                     <div class="input-field col l4 offset-l2 s12">
                         <p class="range-field">
-                            <label for="charisma_stat">Charisma: </label>
+                            <label for="charisma_stat">Charisma: </label> <!-- Takes the input for the charisma stat -->
                             <input type="range" id="charisma_stat" name="charisma_stat" min="0" max="100" />
                         </p>
                     </div>
                     <div class="input-field col l4 s12">
                         <p class="range-field">
-                            <label for="luck_stat">Luck: </label>
+                            <label for="luck_stat">Luck: </label> <!-- Takes the input for the luck stat -->
                             <input type="range" id="luck_stat" name="luck_stat" min="0" max="100" />
                         </p>
                     </div>
                 </div>
                 <div class="row">
+                    <!-- Styled button which submits the form and creates a card -->
                     <button class="btn waves-effect waves-light col l4 offset-l4 s8 offset-s2 submit_button brown darken-1 card-button" type="submit">Make a card!
                         <i class="material-icons right">send</i>
                     </button>

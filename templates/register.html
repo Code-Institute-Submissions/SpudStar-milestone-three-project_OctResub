@@ -5,29 +5,30 @@
             <div class="title-holder">
                 <h3>Register</h3>
             </div>
-            <form method="POST" action="{{ url_for('register') }}">
+            <form method="POST" action="{{ url_for('register') }}"> <!-- Allows for form to check if registration credentials repeat, and add them to the database -->
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="material-icons prefix">account_box</i>
-                        <input id="icon_prefix" name="username" type="text" class="validate" minlength="3" maxlength="15" required>
+                        <input id="icon_prefix" name="username" type="text" class="validate" minlength="3" maxlength="15" required> <!-- Sets the username between 3-15 characters -->
                         <label for="icon_prefix">Username:</label>
                     </div>
                     <div class="input-field col s12">
                         <i class="material-icons prefix">lock</i>
-                        <input id="icon_telephone" name="password" type="password" class="validate" minlength="8" maxlength="20" required>
+                        <input id="icon_telephone" name="password" type="password" class="validate" minlength="8" maxlength="20" required> <!-- Sets the password between 8-20 characters -->
                         <label for="icon_telephone">Password:</label>
                     </div>
+                    <!-- Submits the form -->
                     <button class="btn waves-effect waves-light col s4 offset-s4 submit_button brown darken-1" type="submit" name="action">Register
                         <i class="material-icons right">send</i>
                       </button>
                 </div>
             </form>
             <div>
-                {% with errors = get_flashed_messages() %}
-                    {% if errors %}
-                        {% for error in errors %}
+                {% with errors = get_flashed_messages() %} <!-- Retrieves stored messages-->
+                    {% if errors %} <!-- Checks if there are any error messages currently-->
+                        {% for error in errors %} <!-- Iterates through all error messages-->
                             <div class="row error-message">
-                                <h6>{{ error }}</h6>
+                                <h4>{{ error }}</h4> <!-- Displays the message to the user-->
                             </div>
                         {% endfor %}
                     {% endif %}

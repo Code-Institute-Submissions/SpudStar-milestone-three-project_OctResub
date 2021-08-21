@@ -1,50 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Metadata -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- All CSS style sheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+    <!-- Title of the webpage -->
     <title>Top of the Trumps</title>
 </head>
 <body>
     <header>
         
-    <!-- Dropdown Structure -->
+    <!-- Dropdown for Large Screens -->
     <ul id='dropdown' class='dropdown-content'>
-        <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+        <li><a href="{{ url_for('logout') }}" aria-label="Log Out">Log Out</a></li>
         <li class="divider"></li>
-        <li><a href="{{ url_for('profile', username=session['user']) }}">View Profile</a></li>
-        <li><a href="{{ url_for('card_maker') }}">Make a Card</a></li>
+        <li><a href="{{ url_for('profile', username=session['user']) }}" aria-label="Your Profile">View Profile</a></li>
+        <li><a href="{{ url_for('card_maker') }}" aria-label="Create a Card">Make a Card</a></li>
     </ul>
+    <!-- Dropdown for Smaller Screens -->
     <ul id='dropdown2' class='dropdown-content'>
-        <li><a href="{{ url_for('home') }}">Home</a></li>
-        <li><a href="{{ url_for('all_trumps_showcase') }}">Showcase</a></li>
-        {% if not session.user %}
-        <li><a href="{{ url_for('register') }}">Register</a></li>
-        <li><a href="{{ url_for('login') }}">Log In</a></li>
-        {% else %}
-        <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+        <li><a href="{{ url_for('home') }}" aria-label="Back to Landing Page">Home</a></li>
+        <li><a href="{{ url_for('all_trumps_showcase') }}" aria-label="Go to Showcase">Showcase</a></li>
+        {% if not session.user %} <!-- Checks to see if the user is logged in -->
+        <li><a href="{{ url_for('register') }}" aria-label="Register">Register</a></li>
+        <li><a href="{{ url_for('login') }}" aria-label="Log In">Log In</a></li>
+        {% else %} <!-- Shows Profile options if logged in -->
+        <li><a href="{{ url_for('logout') }}" aria-label="Log Out">Log Out</a></li>
         <li class="divider"></li>
-        <li><a href="{{ url_for('profile', username=session['user']) }}">View Profile</a></li>
-        <li><a href="{{ url_for('card_maker') }}">Make a Card</a></li>
+        <li><a href="{{ url_for('profile', username=session['user']) }}" aria-label="Your Profile">View Profile</a></li>
+        <li><a href="{{ url_for('card_maker') }}" aria-label="Create a Card">Make a Card</a></li>
         {% endif %}
     </ul>
+    <!-- Actual Navbar element (Basis from Materialize and customized) -->
     <nav>
         <div class="nav-wrapper brown darken-1">
         <a href="{{ url_for('home') }}" class="brand-logo"><img alt="Logo for Top of the Trumps" src="../static/resources/logo.png"></a>
         <ul class="right">
             <li class="hide-on-med-and-down"><a href="{{ url_for('home') }}">Home</a></li>
             <li class="hide-on-med-and-down"><a href="{{ url_for('all_trumps_showcase') }}">Showcase</a></li>
-            {% if not session.user %}
+            {% if not session.user %} <!-- Checks to see if the user is logged in -->
             <li class="hide-on-med-and-down"><a href="{{ url_for('register') }}">Register</a></li>
             <li class="hide-on-med-and-down"><a href="{{ url_for('login') }}">Log In</a></li>
             <!-- Dropdown Trigger -->
-            {% else %}
+            {% else %} <!-- Shows User Profile dropdown if logged in -->
             <li><a class="dropdown-button hide-on-med-and-down" href="#" data-activates="dropdown"><span class="hide-on-med-and-down">{{ session["user"].capitalize() }}'s Profile</span><i class="material-icons right">account_box</i></a></li>
-            {% endif %}
+            {% endif %} <!-- Shows generic dropdown on smaller screens (Avoids null errors with user) -->
             <li><a class="dropdown-button hide-on-large-only" href="#" data-activates="dropdown2"><i class="material-icons right">account_box</i></a></li>
         </ul>
         </div>
@@ -52,12 +57,12 @@
     
     </header>
 
-    <div class="background-image">
-        {% block content %}
-        {% endblock %}
-    </div>
+    <!-- Content from other pages is loaded here -->
+    {% block content %}
+    {% endblock %}
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <!-- Scripts used from the project -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script> <!-- Unsure if JQuery is needed, but it was the only thing that allowed the navbar to work -->
     <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
 </body>

@@ -3,12 +3,13 @@
     <div class="row">
         <div class="col l8 offset-l2 content-holder">
             <div class="row valign-wrapper">
-                <h4 class="col">{{ username.capitalize() }}'s Profile</h4> 
+                <h4 class="col">{{ username.capitalize() }}'s Profile</h4> <!-- Changes title based on users username-->
                 <h5 class="col sub-header"> - Your Cards</h5>
-                <a class="btn waves-effect waves-light green col" style="top:6px" href="{{ url_for('card_maker') }}">New Card</a>
+                <a class="btn waves-effect waves-light green col" style="top:6px" href="{{ url_for('card_maker') }}">New Card</a> <!-- Conveinient button to make a new card-->
             </div>
-            {% for trump_card in cards %}
-                {% if trump_card.card_maker == session["user"] %}
+            {% for trump_card in cards %} <!-- Goes through all cards in the array-->
+                {% if trump_card.card_maker == session["user"] %} <!-- Checks if they were made by the user, and if so displays them-->
+                    <!-- Card setup same as showcase-->
                     <div class = "container card-container">
                         <div class="card-name-container valign-wrapper">
                             <h3>{{trump_card.card_name}}</h3>
@@ -57,6 +58,7 @@
                             </div>
                         </div>
                         <div class="row">
+                            <!--Two additonal buttons at the bottom left and right of the card, allows the user to edit and delete that card-->
                             <a class="btn-floating btn-large waves-effect waves-light green col edit-button" href="{{ url_for('edit_card', card_id=trump_card._id) }}"><i class="material-icons">border_color</i></a>
                             <a class="btn-floating btn-large waves-effect waves-light grey col offset-s7 delete-button"  href="{{ url_for('delete_card', card_id=trump_card._id) }}"><i class="material-icons">clear</i></a>
                         </div>

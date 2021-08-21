@@ -2,56 +2,56 @@
 {% block content %}
 <div class="row">
     <div class="col l8 offset-l2 content-holder">
-        {% for trump_card in cards %}
+        {% for trump_card in cards %}  <!-- Displays all cards in the database-->
             <div class = "card-container">
                 <div class="card-name-container valign-wrapper">
-                    <h3>{{trump_card.card_name}}</h3>
+                    <h3>{{trump_card.card_name}}</h3>   <!-- Displays the name of the card-->
                 </div>
                 <div class="card-image-container">
-                    <img class = "card-image" src= {{trump_card.image_url}} alt = "An image of {{trump_card.card_name}}">
+                    <img class = "card-image" src= {{trump_card.image_url}} alt = "An image of {{trump_card.card_name}}"> <!-- Displays the cards image using a url-->
                 </div> <br>
                 <div class="card-stats-container row">
                     <div class="col s5 stats valign-wrapper">
-                        <p>Attack: {{trump_card.attack_stat}}</p> 
+                        <p>Attack: {{trump_card.attack_stat}}</p>  <!-- Displays the Attack stat-->
                     </div>
                     <div class="col s7">
-                        <div class="full-bar"><div class="value-bar" style="width: {{trump_card.attack_stat}}%"></div></div>
+                        <div class="full-bar"><div class="value-bar" style="width: {{trump_card.attack_stat}}%"></div></div> <!-- Adjusts bar width based on attack stat to provide visual scaling-->
                     </div>
                 </div>
                 <div class="card-stats-container row">
                     <div class="col s5 stats valign-wrapper">
-                        <p>Defence: {{trump_card.defence_stat}}</p> 
+                        <p>Defence: {{trump_card.defence_stat}}</p>  <!-- Displays the Defence stat-->
                     </div>
                     <div class="col s7">
-                        <div class="full-bar"><div class="value-bar" style="width: {{trump_card.defence_stat}}%"></div></div>
+                        <div class="full-bar"><div class="value-bar" style="width: {{trump_card.defence_stat}}%"></div></div> <!-- Adjusts bar width based on defence stat to provide visual scaling-->
                     </div>
                 </div>
                 <div class="card-stats-container row">
                     <div class="col s5 stats valign-wrapper">
-                        <p>Speed: {{trump_card.speed_stat}}</p> 
+                        <p>Speed: {{trump_card.speed_stat}}</p>   <!-- Displays the Speed stat-->
                     </div>
                     <div class="col s7">
-                        <div class="full-bar"><div class="value-bar" style="width: {{trump_card.speed_stat}}%"></div></div>
+                        <div class="full-bar"><div class="value-bar" style="width: {{trump_card.speed_stat}}%"></div></div> <!-- Adjusts bar width based on speed stat to provide visual scaling-->
                     </div>
                 </div>
                 <div class="card-stats-container row">
                     <div class="col s5 stats valign-wrapper">
-                        <p>Charisma: {{trump_card.charisma_stat}}</p> 
+                        <p>Charisma: {{trump_card.charisma_stat}}</p>  <!-- Displays the Charisma stat-->
                     </div>
                     <div class="col s7">
-                        <div class="full-bar"><div class="value-bar" style="width: {{trump_card.charisma_stat}}%"></div></div>
+                        <div class="full-bar"><div class="value-bar" style="width: {{trump_card.charisma_stat}}%"></div></div> <!-- Adjusts bar width based on charisma stat to provide visual scaling-->
                     </div>
                 </div>
                 <div class="card-stats-container row">
                     <div class="col s5 stats valign-wrapper">
-                        <p>Luck: {{trump_card.luck_stat}}</p> 
+                        <p>Luck: {{trump_card.luck_stat}}</p>   <!-- Displays the Luck stat-->
                     </div>
                     <div class="col s7">
-                        <div class="full-bar"><div class="value-bar" style="width: {{trump_card.luck_stat}}%"></div></div>
+                        <div class="full-bar"><div class="value-bar" style="width: {{trump_card.luck_stat}}%"></div></div> <!-- Adjusts bar width based on luck stat to provide visual scaling-->
                     </div>
                 </div>
                 <div class="row">
-                    <p class="col s6 offset-s3 cards-maker">Made by {{trump_card.card_maker.capitalize()}}</p>
+                    <p class="col s6 offset-s3 cards-maker">Made by {{trump_card.card_maker.capitalize()}}</p>  <!-- Displays the username of who made the card-->
                 </div>
                 
             </div>
