@@ -1,8 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
     <div class="row">
-        <div class="title-holder col m6 offset-m3">
-            <h4>Home</h4>
+        <div class="title-holder col m6 offset-m3 content-holder">
+            <h4>WELCOME!</h4>
+            <p>Top of the Trumps is a community where fans come together to make custom Top Trumps cards from a multitude of fandoms.</p>
+            <p>Come join us today and start making!</p>
+            <div class="row">
+                <a class="btn btn-large waves-effect waves-light grey darken-1 col s2 offset-s4 card-button" href="{{ url_for('login') }}">LOGIN</a>
+                <a class="btn btn-large waves-effect waves-light green col s2 card-button" href="{{ url_for('register') }}">SIGN UP</a>
+            </div>
         </div>
     </div>
 {% endblock %}
