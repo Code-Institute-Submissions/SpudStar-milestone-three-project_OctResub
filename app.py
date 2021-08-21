@@ -128,6 +128,12 @@ def edit_card(card_id):
     return render_template("edit_card.html", card=card)
 
 
+@app.route("/delete_card/<card_id>")
+def delete_card(card_id):
+    mongo.db.trump_card_stats.remove({"_id": ObjectId(card_id)})
+    return render_template("index.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"), 
             port=int(os.environ.get("PORT")),
