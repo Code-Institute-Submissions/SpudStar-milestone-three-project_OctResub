@@ -1,4 +1,4 @@
-![webiste](readmeassets/amResponsiveMinefield.png)
+![webiste](readmeassets/am_i_responsive_ms3.png)
 # Top of the Trumps
 ## An Backend Development Project by Edward Stanley
 'Top of the Trumps' is a database driven project using MongoDB for data storage and retrieval as well as Materialize for the styling and form elements. The website allows users to create their own cards based on the popular card game Top Trumps, the goal being the crossover of multiple characters and fandoms to create one large Top Trumps card depository.
@@ -40,7 +40,7 @@ Users have the ability to create their own private accounts in which they can cr
 #
 ## Wireframes
 The following wirefrane was made in Balsamiq  
-[Please Click Here.](readmeassets/milestonetwowireframe.pdf)
+[Please Click Here.](readmeassets/wireframe_ms3.pdf)
 
 The wireframe can also be found in the readmeassets folder included in this project
 
@@ -96,45 +96,48 @@ For the features I will go on a page to page basis.
 #
 ## Testing
 ### HTML W3 Validator
- ![webiste](readmeassets/htmlvalidatorone.png)
+ After running the URL into the validator the only issues brought up was the redundancy of inputting the type in the < script > java imports. Deleted them and no errors after that.
 
- In order to check my HTML I put my website's URL into the validator. Whilst the majority was just issues with commenting which didn't affect the code, there was an odd interaction popping up between my last div in my footer. Upon further inspection I simply added a " in my div tags by mistake. Deleting it solved those errors.
-
- ![webiste](readmeassets/htmlvalidatortwo.png)
  ### CSS W3 Validator
- ![webiste](readmeassets/cssvalidatorresult.png)
- There was no problems with my CSS code, the validator passed it first time.
+ The only issue I had with my CSS was accidently putting px at the end of a font-weight. No errors after that.
+
  ### JSHint Validator
- After putting the code through the validator there were multiple complaints about the 'let' initialiser however on closer inspection it was fine. The most that was wrong with the code was the occasional missing semi-colon which I fixed.
+ As there was only one line of code of JQuery, which was working as shown by the nav, i didnt see a need to run this through the validator
+
+ ### PEP8 Validator
+ After running the code through the validator, the only errors were the occasional white space and odd indent. Fixed those quickly and no problems anymore
+
 ### Lighthouse Testing
-![webiste](readmeassets/lighthousevalidator.png)
-After running it through Google Chrome's lighthouse tool I had an overall result of 89 which was quite ideal. The page was able to load efficiently and effectively. 
+![webiste](readmeassets/lighthouse_ms3.png)
+After running it through the lighthouse validator I scored very highly in Performance, Accessibility, and SEO however my score in best practices was lower than expected.
+After checking why it seems the validator removes a lot of points for being in html5 which is something I am not going to change. It also didnt like my background image due to it being slightly lower quality, which I personally think actually works well for the background namely because sharper edges would make the background more distracting which isnt ideal. Therefore I am happy overall with my average of 89.5.
 
 ### Larger issues through Testing
-There were a couple of parts of the code which frustrated me for a while before finally working through to a solution:
+There was only one part that really kept me stuck for ages, and that was the navigation dropdown menu. For some reason the javascript code from Materialize was struggling to run. After trying JQuery instead I tried inserting the JQuery script as shown in base.html and for whatever reason it worked. I still have no idea why but it is nice to have aworking nav bar.
 
 ### User Story Testing
-##### *" Owner - I want the site to have controls for multiple devices (mouse and touchscreen controls). -"*
-- There are optional buttons for mobile users allowing them to reveal/flag tiles as necessary. There are also alternate controls for mouse users in the form of right and left click readers to add ease of access.
+##### *" Owner - I want the site to have navigation controls for multiple devices. -"*
+- There are two seperate dropdown menus which appear independently depending on the width of the screen. This allows for some links to remain in the nav bar for computer users, and the same links to appear in the drop down for mobile ensuring everyone can reach where necessary. The two drop down menus ensure no errors due to a non logged in user can occur
 
-##### *" User- I want to be able to play the game on any device"*
-- The tiles are able to dynamically grow/shrink to fit any screen size allowing for a wide range of screen sizes to be used.
+##### *" User- I want to be able to create my own cards including stats, graphics, and names"*
+- The user is able to access the card maker once they have registered. This allows them to use links to imbed images and sliders to set values for the cards statistics. Once submitted the code displays the database information submitted as a visually appealing card.
 
-##### *" Owner - * I want the user to have as much control over their experience as possible"*
-##### *" User- I want to be able to control as much of the games setup as possible"*
-- The user is able to control their own diffculty through the Status Area dimension and bomb values. Their diffculty setting is essentially custom. The added functionality of the flagging also gives the user more control over the game.
+##### *" Owner - * I want the user to have as much control over their account as possible"*
+- The user is able to create cards, edit those cards, and delete cards without any errors. They can also log out and log in at will. As mentioned earlier I would like to implement a subscription system but for now this is achieved.
 
-##### *" User- I want the game to have quality of life features that handle any unecessary actions"*
-- The game has a number of these in place. For example the auto reveal of tiles adjacent to a tile with no bombs near it speeds up the process for the user significantly especially with larger board sizes. The game also keeps track of key statistics for the user such as how many spaces they've flagged and how many tiles are left so the user doesn't have to calculate manually.
+##### *" User- I want to be able to create a unique account, and have full control over what content is in there"*
+- The user is able to make their own account using a username password system that keeps all content they make unique to them. No one else is able to touch it.
 
-##### *" User - I want to have access to instructions on how to play"*
-- The header features an external link to a page with instructions on how Minesweeper plays out.
+##### *" User- I want to see what cards the community has created, and who created them"*
+- The showcase page displays all the cards so the user can look through at their leisure. As mentioned earlier I would like to implement a sort function but for now showing who made what card is good enough.
 
-##### *" User- I want to have graphics relevant to the game that clearly convey what is happening"*
-- The use of coloured tiles in addition to the numbers on each tile creates an easier visual distinction for the user when playing the game. All colours are very different from eachother so confusion is minimum. The background graphic also doesn't distract from the game itself and the translucent overlay for containers makes text easier to read.
+##### *" User -  I want a secure registration, log in, log out process using password encryption"*
+- The hash system used on the password ensures the safety of the account. The ommitence of certain files from the git commits also help protect the user.
 
-##### *" Owner - I want to create a game that visitors can enjoy used"*
-- I myself very much enjoyed making and playing this game in browser
+##### *" Owner - I want to create a site which credits community members who make content for it"*
+- Anyone who makes this account is able to make whatever cards they want. The card siaplys ensures that persons name will be on it to credit them. 
+
+Overall I believe I have fully achieved the goals I initially set out to do, and this has potential to turn into an even bigger project.
 
 #
 ## Deployment
@@ -142,9 +145,25 @@ Before attempting to download this project for your own I highly recommend insta
 
 To deploy the website I used the following steps:
 
+1) I created a requirements.txt file using pip3 in order to let Heroku know what additional downloads were needed to run the website
+2) I created a Procfile to handle web addresses
+3) I set up an env py file which housed default settings for the Port, IP, Secret Key, mongo URI and mongo database link.
+    (The secret key was generated using a fort knox password)
+4) I signed into Heroku and created a new app making sure python was the default language. 
+5) I gave my app a unique name and selected the region as Europe (As it was the closest to me) and created the app.
+6) I linked it to my github by searching for the repository name
+7) I went to Settings and revealed the Config Vars, which allowed me to put in the data from the env py file
+8) I set the website to automatically deploy
 
+Now any changes are automatically deployed.
 
 ### How to run the project locally
+
+1) Go to my repository [here.](https://github.com/SpudStar/milestone-three-project) 
+2) Click on the code dropdown and selech HTTPS
+3) Copy the URL and open the terminal
+4) Create a directory to store the repository in
+5) Create a local clone repository using git clone
 
 #
 ## Credits
@@ -152,7 +171,7 @@ To deploy the website I used the following steps:
 Any external code used was from MaterializeCSS in order to structure the dropdown menu, forms, and general CSS styling. Everything python-side was what I had learnt from lessons/ my own logic.
 
 ### Media - photos
-One photo was used for this project, and it was edited into the custom background by myself. The origional can be found[here.](https://imgbin.com/png/Gzs6cgcm/top-trumps-logo-winning-moves-png) 
+One photo was used for this project, and it was edited into the custom background by myself. The origional can be found [here.](https://imgbin.com/png/Gzs6cgcm/top-trumps-logo-winning-moves-png) 
 
 ## Acknowledgement
 Thanks you for looking over this project, I hope you had a go at creating some cards of your own!

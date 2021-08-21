@@ -69,7 +69,7 @@ header .dropdown-content{
 
 ul.dropdown-content li a {
     background-color: rgb(66, 59, 50);
-    font-weight:200px ;
+    font-weight:200;
     color: white;
 }
 

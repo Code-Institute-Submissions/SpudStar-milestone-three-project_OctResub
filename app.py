@@ -1,12 +1,12 @@
-import os 
-#Imports flash library 
-from flask import (Flask, flash, render_template, 
-    redirect, request, session, url_for)
-#Imports PyMongo database library
+import os
+# Imports flash library
+from flask import (Flask, flash, render_template,
+                   redirect, request, session, url_for)
+# Imports PyMongo database library
 from flask_pymongo import PyMongo
-#Imports object id used for tracing ID's to edit ect later
+# Imports object id used for tracing ID's to edit ect later
 from bson.objectid import ObjectId
-#Imports werkzeug to encrypt the user's passwords
+# Imports werkzeug to encrypt the user's passwords
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
@@ -25,7 +25,7 @@ mongo = PyMongo(app)
 @app.route("/home")
 def home():
     # Allows connection to landing page
-    return render_template("index.html")  
+    return render_template("index.html")
 
 
 @app.route("/all_trumps_showcase")
@@ -77,7 +77,7 @@ def login():
         if existing_user:
             # Checks the password is correct
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
+               existing_user["password"], request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
                     # Logs the user in
                     return redirect(url_for(
@@ -163,7 +163,7 @@ def delete_card(card_id):
     return redirect(url_for("all_trumps_showcase"))
 
 
-if __name__ == "__main__": #Sets up sensitive user info
-    app.run(host=os.environ.get("IP"), 
+if __name__ == "__main__":  # Sets up sensitive user info
+    app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=True)       
+            debug=True)
