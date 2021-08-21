@@ -19,19 +19,33 @@
         <li><a href="{{ url_for('profile', username=session['user']) }}">View Profile</a></li>
         <li><a href="{{ url_for('card_maker') }}">Make a Card</a></li>
     </ul>
+    <ul id='dropdown2' class='dropdown-content'>
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('all_trumps_showcase') }}">Showcase</a></li>
+        {% if not session.user %}
+        <li><a href="{{ url_for('register') }}">Register</a></li>
+        <li><a href="{{ url_for('login') }}">Log In</a></li>
+        {% else %}
+        <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+        <li class="divider"></li>
+        <li><a href="{{ url_for('profile', username=session['user']) }}">View Profile</a></li>
+        <li><a href="{{ url_for('card_maker') }}">Make a Card</a></li>
+        {% endif %}
+    </ul>
     <nav>
         <div class="nav-wrapper brown darken-1">
-        <a href="{{ url_for('home') }}" class="brand-logo">Logo</a>
-        <ul class="right hide-on-med-and-down">
-            <li><a href="{{ url_for('home') }}">Home</a></li>
-            <li><a href="{{ url_for('all_trumps_showcase') }}">Showcase</a></li>
+        <a href="{{ url_for('home') }}" class="brand-logo"><img alt="Logo for Top of the Trumps" src="../static/resources/logo.png"></a>
+        <ul class="right">
+            <li class="hide-on-med-and-down"><a href="{{ url_for('home') }}">Home</a></li>
+            <li class="hide-on-med-and-down"><a href="{{ url_for('all_trumps_showcase') }}">Showcase</a></li>
             {% if not session.user %}
-            <li><a href="{{ url_for('register') }}">Register</a></li>
-            <li><a href="{{ url_for('login') }}">Log In</a></li>
+            <li class="hide-on-med-and-down"><a href="{{ url_for('register') }}">Register</a></li>
+            <li class="hide-on-med-and-down"><a href="{{ url_for('login') }}">Log In</a></li>
             <!-- Dropdown Trigger -->
             {% else %}
-            <li><a class="dropdown-button" href="#" data-activates="dropdown">{{ session["user"].capitalize() }}'s Profile<i class="material-icons right">account_box</i></a></li>
+            <li><a class="dropdown-button hide-on-med-and-down" href="#" data-activates="dropdown"><span class="hide-on-med-and-down">{{ session["user"].capitalize() }}'s Profile</span><i class="material-icons right">account_box</i></a></li>
             {% endif %}
+            <li><a class="dropdown-button hide-on-large-only" href="#" data-activates="dropdown2"><i class="material-icons right">account_box</i></a></li>
         </ul>
         </div>
     </nav>

@@ -104,7 +104,7 @@ def card_maker():
             "card_maker": session["user"]
         }
         mongo.db.trump_card_stats.insert_one(data)
-        return render_template("index.html")
+        return redirect(url_for("all_trumps_showcase"))
     return render_template("card_maker.html")
 
 
@@ -122,7 +122,7 @@ def edit_card(card_id):
             "card_maker": session["user"]
         }
         mongo.db.trump_card_stats.update({"_id": ObjectId(card_id)}, data)
-        return render_template("index.html")
+        return redirect(url_for("all_trumps_showcase"))
 
     card = mongo.db.trump_card_stats.find_one({"_id": ObjectId(card_id)})
     return render_template("edit_card.html", card=card)
@@ -131,10 +131,11 @@ def edit_card(card_id):
 @app.route("/delete_card/<card_id>")
 def delete_card(card_id):
     mongo.db.trump_card_stats.remove({"_id": ObjectId(card_id)})
-    return render_template("index.html")
+    return redirect(url_for("all_trumps_showcase"))
 
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"), 
             port=int(os.environ.get("PORT")),
             debug=True)
+            
