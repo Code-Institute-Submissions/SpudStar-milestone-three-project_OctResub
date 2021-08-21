@@ -1,11 +1,12 @@
 .card-container{
     background-color: rgb(145, 100, 63);
-    width: 300px;
+    width: 300px !important;
     height: 450px;
     border-radius: 20px;
-    border-width: 5px;
-    border-color: rgb(43, 27, 10);
-    border-style: solid;
+    border: solid rgb(43, 27, 10) 5px;
+    margin-left:20px;
+    margin-bottom:40px;
+    display:inline-block;
 }
 
 .card-image{
@@ -87,8 +88,10 @@ label{
 
 .content-holder{
     background-color:rgb(236, 229, 158);
-    padding:10px 30px 50px !important;
+    padding-top:10px !important;
+    padding-bottom:10px !important;
     border-radius: 0 0 20px 20px;
+    text-align: center;
 }
 
 .card-button{
@@ -104,4 +107,16 @@ label{
 
 .delete-button{
     left:7px;
+}
+
+.cards-maker{
+    position: relative;
+    top:-20px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.sub-header{
+    position: relative;
+    top:3px;
 }
