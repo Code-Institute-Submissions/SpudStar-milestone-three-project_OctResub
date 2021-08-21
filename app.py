@@ -61,7 +61,8 @@ def login():
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
-                    return redirect(url_for("profile", username=session["user"]))
+                    return redirect(url_for(
+                        "profile", username=session["user"]))
             else:
                 flash("Incorrect Username/Password")
                 return redirect(url_for("login"))
@@ -103,11 +104,26 @@ def card_maker():
             "card_maker": session["user"]
         }
         mongo.db.trump_card_stats.insert_one(data)
+        return render_template("index.html")
     return render_template("card_maker.html")
 
 
 @app.route("/edit_card/<card_id>", methods=["GET", "POST"])
 def edit_card(card_id):
+    if request.method == "POST":
+        data = {
+            "card_name": request.form.get("card_name"),
+            "image_url": request.form.get("image_url"),
+            "attack_stat": request.form.get("attack_stat"),
+            "defence_stat": request.form.get("defence_stat"),
+            "speed_stat": request.form.get("speed_stat"),
+            "charisma_stat": request.form.get("charisma_stat"),
+            "luck_stat": request.form.get("luck_stat"),
+            "card_maker": session["user"]
+        }
+        mongo.db.trump_card_stats.update({"_id": ObjectId(card_id)}, data)
+        return render_template("index.html")
+
     card = mongo.db.trump_card_stats.find_one({"_id": ObjectId(card_id)})
     return render_template("edit_card.html", card=card)
 
